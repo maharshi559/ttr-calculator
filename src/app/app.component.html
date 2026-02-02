@@ -1,0 +1,51 @@
+<div class="main-container">
+  <div class="header">
+    <h1 class="title">Ticket to Ride Calculator</h1>
+    <div class="subtitle">Enter your route lengths to calculate your score</div>
+  </div>
+  <div class="score-display-container">
+
+    <div class="labels-container">
+      <div class="score">{{totalScore()}}</div>
+    </div>
+  </div>
+  <div class="values-container">
+    @for (item of clickHistory(); track $index) {
+    <div class="value">{{item}}</div>
+    }
+
+    <div class="actions">
+      <button class="action-button reset-button" (click)="clearAll()">
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+        </svg>
+
+        clearAll
+      </button>
+      <button class="action-button undo-button" (click)="undoLast()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m15 15-6 6m0 0-6-6m6 6V9a6 6 0 0 1 12 0v3" />
+        </svg>
+
+        Undo
+      </button>
+    </div>
+  </div>
+
+  <div class="route-length-container">
+    @for (rl of routeLengths; track $index) {
+    <div class="card" (click)="onCardTouchStart(rl)">
+      <div class="card-label">{{rl}}</div>
+      <div class="card-count">
+        {{rl}} x {{cards()[rl - 1].count()}}
+      </div>
+    </div>
+    }
+  </div>
+
+
+</div>
