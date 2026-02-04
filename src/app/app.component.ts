@@ -2,13 +2,14 @@ import { Component, computed, effect, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { StorageService } from './services/storage.service';
+import { AdBannerComponent } from './components/ad-banner.component';
 import { getPointsForLength } from './constants/ticket-to-ride-scores';
 import { count } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AdBannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [StorageService],
