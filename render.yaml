@@ -1,10 +1,6 @@
 services:
   - type: web
     name: ttr-calculator
-    env: docker
-    dockerfilePath: ./Dockerfile
+    runtime: docker
     plan: free
     healthCheckPath: /
-    envVars:
-      - key: NODE_ENV
-        value: production
