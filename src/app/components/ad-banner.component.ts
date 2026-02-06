@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
       <ins
         class="adsbygoogle"
         style="display:block"
-        data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+        data-ad-client="ca-pub-1367828937720955"
         data-ad-slot="xxxxxxxxxx"
         data-ad-format="horizontal"
         data-full-width-responsive="true"
